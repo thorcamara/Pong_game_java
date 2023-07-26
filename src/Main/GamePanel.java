@@ -55,7 +55,15 @@ public class GamePanel extends JPanel implements Runnable {
 
     }
     public void checkCollision() {
-
+        //stops paddles at window edges
+        if(paddle1.y<=0)
+            paddle1.y=0;
+        if(paddle1.y >= (GAME_HEIGHT-PADDLE_HEIGTH))
+            paddle1.y = GAME_HEIGHT-PADDLE_HEIGTH;
+        if(paddle2.y<=0)
+            paddle2.y=0;
+        if(paddle2.y >= (GAME_HEIGHT-PADDLE_HEIGTH))
+            paddle2.y = GAME_HEIGHT-PADDLE_HEIGTH;
     }
     public void run() {
         //game loop
